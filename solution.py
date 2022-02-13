@@ -7,7 +7,7 @@ def solution(l):
     for entry in l:
 
         original = entry
-        dec = 0
+        decrement = 0
         mil_place = ''
         mil_place_list = []
         replace_char = 'x'
@@ -16,10 +16,10 @@ def solution(l):
         period_count = entry.count(period)
         if period_count == 1:
             entry = entry + '.x'
-            dec = 1
+            decrement = 1
         elif period_count == 0:
             entry = entry + '.x.x'
-            dec = 1001
+            decrement = 1001
         else:
             pass
 
@@ -30,9 +30,9 @@ def solution(l):
         for x in mil_place_split:
             mil_place_list.append(x.zfill(3))
 
-        mil_place = int(mil_place.join(mil_place_list)) - dec
+        mil_place = int(mil_place.join(mil_place_list)) - decrement
         
-        new_entry = [original, entry, dec, mil_place]
+        new_entry = [original, entry, decrement, mil_place]
 
         input_data_array.append(new_entry)
         
@@ -43,15 +43,6 @@ def solution(l):
 
     output = output[:-1]
 
-    print(output)
+    print(input_data_array)
 
-
-
-# solution(['1', '1.2', '0.3.2'])
-solution(["1.11", "2.0.0", "1.2", "2", "0.1", "1.2.1", "1.1.1", "2.0"])
-
-
-
-
-
-
+# END of document 
